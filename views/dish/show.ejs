@@ -1,0 +1,39 @@
+<% include ../partials/header %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="lead">DinerApp</div>
+            <div class="list-group">
+                <li class="list-group-item active">Info 1</li>
+                <li class="list-group-item">Info 2</li>
+                <li class="list-group-item">Info 3</li>
+            </div>
+        </div>
+        
+        <div class="col-md-9">
+            
+            <div class="thumbnail">
+                <img class="img-responsive" src="<%=dish.thumbnail%>">
+                <div class="caption-full">
+                    <h4><a><%= dish.title%></a></h4>
+                    <p><%= dish.description%></p>
+                    <p><em>Hosted By <%= dish.hostedBy.username%></em></p>
+                    
+                    <% if(currentUser && currentUser._id.equals(dish.hostedBy.id) || true) {%>
+                    
+                        <a href="/dishes/<%= dish._id %>/edit" class="btn btn-sm btn-success">Edit</a>
+                        <form class="delete-form" action="/dishes/<%= dish._id %>?_method=delete" method="POST">
+                            <button class="btn btn-sm btn-danger">Delete</button>
+                    <% } %>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+
+      
+<% include ../partials/footer %>

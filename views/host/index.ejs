@@ -1,0 +1,25 @@
+<% include ../partials/header %>
+
+<div class="container">
+    <header class="jumbotron">
+        <div class="container">
+            <h1>Hosts around you</h1>
+            <a class="btn btn-primary" href="/hosts/new">Become a host</a>
+        </div>
+    </header>
+    
+    <div class="row text-center">
+    <% hosts.forEach(function(host){ %>
+        <div class="col-md-3 col-sm-6">
+            <div class="thumbnail">
+                <img src=<%=host.profile_img_url %>>
+                <div class="caption"><h5><%= host.first_name%> <%= host.last_name%></h5></div>
+                <a href="/hosts/<%= host._id %>" class="btn btn-sm btn-primary">More Info</a>
+            </div>
+            <p>
+            </p>
+        </div>
+    <% }) %>
+    </div>
+</div>
+<% include ../partials/footer %>

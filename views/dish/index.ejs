@@ -1,0 +1,26 @@
+<% include ../partials/header %>
+
+<div class="container">
+    <header class="jumbotron">
+        <div class="container">
+            <h1>Welcome to Diner</h1>
+            <p>You are welcome to post your home-made dishes or GO visit and have a BITE!</p>
+            <a class="btn btn-primary" href="/dishes/new">Add new dish</a>
+        </div>
+    </header>
+    
+    <div class="row text-center">
+    <% dishes.forEach(function(dish){ %>
+        <div class="col-md-3 col-sm-6">
+            <div class="thumbnail">
+                <img src=<%=dish.thumbnail %>>
+                <div class="caption"><h5><%= dish.title %></h5></div>
+                <a href="/dishes/<%= dish._id %>" class="btn btn-sm btn-primary">More Info</a>
+            </div>
+            <p>
+            </p>
+        </div>
+    <% }) %>
+    </div>
+</div>
+<% include ../partials/footer %>

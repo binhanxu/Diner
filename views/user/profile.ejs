@@ -1,0 +1,12 @@
+
+<% include ../partials/header %>
+
+
+<div><img src="<%= currentUser.profile_img_url %>"></div>
+
+<div><h1>Hi, <%= currentUser.first_name %> <%= currentUser.last_name %></h1></div>
+<div><p>My signature: <%= currentUser.signature %></p></div>
+<div><p>My address: <%= currentUser.address %></p></div>
+
+
+<% include ../partials/footer %>

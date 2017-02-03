@@ -1,0 +1,24 @@
+<% include ../partials/header %>
+
+<div class="container">
+    <header class="jumbotron">
+        <div class="container">
+            <h1>Guests around you</h1>
+        </div>
+    </header>
+    
+    <div class="row text-center">
+    <% guests.forEach(function(guest){ %>
+        <div class="col-md-3 col-sm-6">
+            <div class="thumbnail">
+                <img src=<%=guest.profile_img_url %>>
+                <div class="caption"><h5><%= guest.first_name%> <%= guest.last_name%></h5></div>
+                <a href="/guests/<%= guest._id %>" class="btn btn-sm btn-primary">More Info</a>
+            </div>
+            <p>
+            </p>
+        </div>
+    <% }) %>
+    </div>
+</div>
+<% include ../partials/footer %>

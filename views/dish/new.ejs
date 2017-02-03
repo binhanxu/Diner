@@ -1,0 +1,29 @@
+<% include ../partials/header %>
+<div class="container">
+    <div class="row">
+    <h1 style="text-align:center">Create New Dish</h1>
+        <div style="width:30%;margin:30px auto">
+            <form action="/dishes" method="POST" style="margin-bottom:20px">
+              <div class="form-group" action="/dishes" method="POST">
+                <input type="text" class="form-control" name="dish[title]" placeholder="Dish Name">
+              </div>
+              
+              <!--<div class="form-group">-->
+              <!--  <input type="number" class="form-control" name="price" placeholder="Price" min="0.01" step="0.01">-->
+              <!--</div>-->
+              
+              <div class="form-group">
+                <input type="text" class="form-control" name="dish[thumbnail]" placeholder="Img Url">
+              </div>
+              
+              <div class="form-group">
+                <input type="text" class="form-control" name="dish[description]" placeholder="Add some description...">
+              </div>
+              <button type="submit" class="btn btn-primary btn-block">Submit</button>
+            </form>
+            <a href="/dishes">Go back</a>
+        </div>
+    </div>
+</div>
+
+<% include ../partials/footer %>
